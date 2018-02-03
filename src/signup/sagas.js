@@ -10,8 +10,7 @@ import {
 const signupUrl = '/users/sign-up'
 
 function signupApi (username, password) {
-    console.log("FETCH", signupUrl)
-    return fetch(signupUrl, {
+    const fetchOptions = {
         credentials: 'same-origin',
         method: 'POST',
         headers: {
@@ -19,20 +18,22 @@ function signupApi (username, password) {
             'accept': 'application/json',
         },
         body: JSON.stringify({ username, password }),
-    })
-    .then(handleApiErrors)
-    .then(response => response.json())
-    .then(json => json)
-    .catch((error) => { throw error})
+    }
+
+    return fetch(signupUrl, fetchOptions)
+            .then(handleApiErrors)
+            .then(response => response.json())
+            //.then(json => json)
+            .catch((error) => { throw error})
 }
 
 // This will run on SIGNUP_REQUESTING Action
 function* signupFlow (action) {
     try {
-        const { email, password } = action
+        const { username, password } = action
 
         // call api and wait here for response
-        const response = yield call(signupApi, email, password)
+        const response = yield call(signupApi, username, password)
 
         // dispatch success action with response
         yield put({ type: SIGNUP_SUCCESS, response })

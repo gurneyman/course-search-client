@@ -1,9 +1,9 @@
 import { SIGNUP_REQUESTING } from './constants'
 
-const signupRequest = function signupRequest ({ email, password }) {  
+const signupRequest = function signupRequest ({ username, password }) {  
   return {
     type: SIGNUP_REQUESTING,
-    email,
+    username,
     password,
   }
 }

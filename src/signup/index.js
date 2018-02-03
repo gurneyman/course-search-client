@@ -44,11 +44,11 @@ class Signup extends Component {
         <div className="signup">
           <form className="widget-form" onSubmit={handleSubmit(this.submit)}>
             <h1>Signup</h1>
-            <label htmlFor="email">Email</label>
+            <label htmlFor="username">Username</label>
             <Field
-              name="email"
+              name="username"
               type="text"
-              id="email"
+              id="username"
               className="email"
               label="Email"
               component="input"
