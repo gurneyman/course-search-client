@@ -9,7 +9,7 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom'
 import App from './App'  
 import Login from './login'  
 import Signup from './signup'  
-import Widgets from './widgets'  
+import Profile from './profile'  
 import './index.css'
 
 // Import the index reducer and sagas
@@ -48,7 +48,7 @@ ReactDOM.render(
       <App>
         <Route path="/login" component={Login} />
         <Route path="/signup" component={Signup} />
-        <Route path="/widgets" component={Widgets} />
+        <Route path="/profile" component={Profile} />
       </App>
     </BrowserRouter>
   </Provider>,

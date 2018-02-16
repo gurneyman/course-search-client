@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { reduxForm, Field } from 'redux-form'
 import { connect } from 'react-redux'
-import { Link } from 'react-router-dom'
+import { Link, Redirect } from 'react-router-dom'
 
 import Messages from '../notifications/Messages'  
 import Errors from '../notifications/Errors'
@@ -69,6 +69,9 @@ class Login extends Component {
                     {requesting && <div>Logging in...</div>}
                     {!requesting && !successful && (
                         <Link to="/signup">Need to Signup? Click Here »</Link>
+                    )}
+                    {successful && (
+                        <Redirect to="/profile" />
                     )}
                 </div>
             </div>
