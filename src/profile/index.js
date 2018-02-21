@@ -8,6 +8,8 @@ import Errors from '../notifications/Errors'
 
 import {profileRequest} from './actions'
 
+import './Profile.css'
+
 class Profile extends Component {
     static propTypes = {
         client: PropTypes.shape({
@@ -40,7 +42,7 @@ class Profile extends Component {
             },
         } = this.props
         return (
-            <div>
+            <div class="Profile">
                 {requesting && (
                     <div>
                         Loading profile

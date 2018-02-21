@@ -9,7 +9,9 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom'
 import App from './App'  
 import Login from './login'  
 import Signup from './signup'  
-import Profile from './profile'  
+import Profile from './profile' 
+
+import 'normalize.css'
 import './index.css'
 
 // Import the index reducer and sagas
